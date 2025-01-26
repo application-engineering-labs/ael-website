@@ -1,0 +1,195 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroSquareImage from '~/assets/images/hero-square.png'
+import HeroAboutImage from '~/assets/images/hero-about.jpg'
+
+
+import Note from '~/components/widgets/Note.astro';
+import Features from '~/components/widgets/Features.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
+
+const metadata = {
+  title: 'AEL — Product Development, Data Engineering & Site Reliability Solutions',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero2
+    actions={[
+      { variant: 'primary', target: '_blank', text: 'Book a Discovery Call', href: 'https://cal.com/hello-ael/15min' },
+    ]}
+    image={{
+      src: HeroSquareImage,
+      alt: 'AstroWind Hero Image',
+    }}
+  >
+    <Fragment slot="title">
+      Data-Driven. Reliable. <span class="text-secondary highlight">Built to Last.</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        <span class="font-semibold">We are a team of experts</span> working with businesses, ranging from startups to IPOs.
+        We help close the gap between an idea and product to deliver reliable, user friendly software solutions, that are
+        built for the scale of tomorrow.</span
+      >
+    </Fragment>
+  </Hero2>
+  <!-- Note Widget ******************* -->
+
+  <Note />
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="services"
+    tagline="Our Promise"
+    title="We help our partners succeed"
+    subtitle="We embrace the challenges of our partner entrepreneurs and business leaders and help them build and launch innovative software solutions to the market across a range of verticals & industries."
+    items={[
+      {
+        title: 'Product Vision Alignment',
+        description: 'We begin with a workshop to help align your product vision with your business goals.',
+        icon: 'tabler:brand-tailwind',
+      },
+      {
+        title: 'MVP Design',
+        description: 'Together we make a plan to go to the market quickly with a high-quality Minimum Viable Product.',
+        icon: 'tabler:components',
+      },
+      {
+        title: 'Custom Software Development',
+        description: 'We apply lean iterative frameworks to create custom software solutions to realise your business vision.',
+        icon: 'tabler:list-check',
+      },
+      {
+        title: 'Automation',
+        description: 'We identify bottlenecks and opportunities to automate repetitive business processes, reduce toil and redirect focus on innovative efforts.',
+        icon: 'tabler:rocket'
+      },
+      {
+        title: 'AI Development & Enablement',
+        description: 'We leverage ML and Generative AI strategically to ensure your business is future-ready.',
+        icon: 'tabler:device-desktop-analytics',
+      },
+      {
+        title: 'Data Engineering',
+        description:
+          'We help you build a data-driven culture by leveraging data engineering and analytics to drive business decisions.',
+        icon: 'tabler:arrows-right-left',
+      },
+      {
+        title: 'Site Reliability Engineering',
+        description:
+          'We ensure your systems are scalable, reliable, and performant through best practices and automated resilience.',
+        icon: 'tabler:bulb',
+      },
+      {
+        title: 'Workshops & Training',
+        description:
+          'We offer workshops and training to help your team adopt a UX mindset, agile methodologies, DevOps practices, and more.',
+        icon: 'tabler:school',
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    id="about"
+    isReversed
+    tagline="More than just an IT company"
+    title="We offer a transformative experience"
+    items={[
+      {
+        title: 'A holistic approach',
+        description:
+          'We advise each of our customers individually, comprehensively and with the aim of developing a long-lasting partnership.',
+      },
+      {
+        title: 'Longevity thanks to clean pragmatic practices',
+        description:
+          'We believe that care pays off. We establish lightweight and efficient processes and structures that guarantee that the appropriate solutions will function sustainably for a long time.',
+      },
+      {
+        title: 'Individual Mentoring',
+        description:
+          'Every project is different. Accordingly, we always attach great importance to tailor-made solutions that take your context into account.',
+      },
+    ]}
+    image={{
+      src: HeroAboutImage,
+      alt: 'Colorful Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Building on modern foundations</h3>
+      Gain a competitive edge by leveraging our battle tested industry leading practices combined with our personalised services for
+      unique customers.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    title="Get your project up and running in no time with AEL."
+    items={[
+      {
+        title: 'Step 1: <span class="font-medium">Book a Discovery Call</span>',
+        description:
+          "Let's get to know each other. We'll discuss your vision, goals, and requirements. We will establish expectations, clarify pricing and outline a roadmap to bring your idea to life.",
+        icon: 'tabler:package',
+      },
+      {
+        title: 'Step 2: <span class="font-medium">Establish scope of MVP</span>',
+        description:
+          "Together, we'll define the scope of your MVP. We'll outline the features, order by priority to your customers, and establish a timeline for an iterative and incremental delivery.",
+        icon: 'tabler:letter-case',
+      },
+      {
+        title: 'Step 3: <span class="font-medium">Delivery</span>',
+        description:
+          'Together, we will deliver a high-quality MVP that meets your requirements and exceeds your expectations. We will help you productionise your application with operational best practices and guide you through the launch process.',
+        icon: 'tabler:paint',
+      },
+      {
+        title: 'Step 4: <span class="font-medium">Iterate & Scale</span>',
+        description: "We'll help you gather feedback, iterate on your product, and scale your application to meet the demands of your growing user base.",
+        icon: 'tabler:check',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
+      alt: 'Steps image',
+    }}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    id="contact"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Book a Discovery Call',
+        href: 'https://cal.com/hello-ael/15min',
+        target: '_blank',
+        icon: 'tabler:phone',
+      },
+    ]}
+  >
+    <Fragment slot="title">The first consultation is on us.</Fragment>
+
+    <Fragment slot="subtitle"> The first step towards success is getting started.</Fragment>
+  </CallToAction>
+</Layout>
